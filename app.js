@@ -1,4 +1,4 @@
-const generateBtn = document.getElementById("generate");
+const generatePasswordBtn = document.getElementById("generate");
 const lengthInput = document.getElementById("length");
 const uppercaseInput = document.getElementById("uppercase");
 const lowercaseInput = document.getElementById("lowercase");
@@ -31,6 +31,14 @@ const randomFunction = {
     Symbol:getRandomSymbol
 }
 
+function getAllUserInput(){
+    const length = lengthInput.value;
+    const isUpper = uppercaseInput.checked;
+    const islower = lowercaseInput.checked;
+    const isNumber = numbersInput.checked;
+    const isSymbol = symbolsInput.checked;
 
+    console.log(length, isNumber, isUpper, isSymbol, islower);
+}
 
-
+generatePasswordBtn.addEventListener("click", getAllUserInput);
