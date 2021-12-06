@@ -31,6 +31,18 @@ const randomFunction = {
     Symbol:getRandomSymbol
 }
 
+function generatePassword(length, isNumber, isUpper, isSymbol, islower){
+
+    var generatedPassword = "";
+
+    if(length == 0){
+        console.log("o")
+        return generatedPassword;
+    }else{
+        
+    }
+}
+
 function getAllUserInput(){
     const length = lengthInput.value;
     const isUpper = uppercaseInput.checked;
@@ -38,7 +50,7 @@ function getAllUserInput(){
     const isNumber = numbersInput.checked;
     const isSymbol = symbolsInput.checked;
 
-    console.log(length, isNumber, isUpper, isSymbol, islower);
+    generatePassword(length, isNumber, isUpper, isSymbol, islower);
 }
 
 generatePasswordBtn.addEventListener("click", getAllUserInput);
