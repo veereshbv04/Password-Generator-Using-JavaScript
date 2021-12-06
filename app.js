@@ -28,19 +28,31 @@ const randomFunction = {
     lower: getRandomLower,
     upper:getRandomUpper,
     number:getRandomNumber,
-    Symbol:getRandomSymbol
+    symbol:getRandomSymbol
 }
 
 function generatePassword(length, isNumber, isUpper, isSymbol, islower){
-
+   
     var generatedPassword = "";
+    const passwordType = [{isNumber}, {isUpper}, {islower}, {isSymbol}].filter(item => Object.values(item)[0]);
+    console.log(passwordType);
+    
 
     if(length == 0){
-        console.log("o")
+        
         return generatedPassword;
     }else{
-        
+    
+        for(let i=0; i<length; i++){
+console.log("hhhhhhhhhhh")
+            funcArr.map(funcType => {
+                console.log(funcType)
+            })
+
+            // generatedPassword += randomFunction.upper() + randomFunction.lower() + randomFunction.number() + randomFunction.symbol();
+        }
     }
+    console.log(generatedPassword)
 }
 
 function getAllUserInput(){
