@@ -34,25 +34,28 @@ const randomFunction = {
 function generatePassword(length, isNumber, isUpper, isSymbol, islower){
    
     var generatedPassword = "";
+    var typesCount = isNumber + islower + isUpper + isSymbol;
     const passwordType = [{isNumber}, {isUpper}, {islower}, {isSymbol}].filter(item => Object.values(item)[0]);
     console.log(passwordType);
     
 
-    if(length == 0){
+    if(typesCount == 0){
         
-        return generatedPassword;
+        return " ";
     }else{
     
-        for(let i=0; i<length; i++){
-console.log("hhhhhhhhhhh")
-            funcArr.map(funcType => {
-                console.log(funcType)
-            })
-
-            // generatedPassword += randomFunction.upper() + randomFunction.lower() + randomFunction.number() + randomFunction.symbol();
+        for(let i=0; i<length; i+= typesCount){
+            // passwordType.forEach(type => {
+            //     const func = Object.keys(type)[0];
+            //     console.log(func)
+            //     generatedPassword += randomFunction.func();
+            // });
+            generatedPassword += randomFunction.upper() + randomFunction.lower() + randomFunction.number() + randomFunction.symbol();
         }
+        var finalPassword = generatedPassword.slice(0, length);
     }
-    console.log(generatedPassword)
+    console.log(finalPassword);
+    return finalPassword
 }
 
 function getAllUserInput(){
@@ -62,7 +65,9 @@ function getAllUserInput(){
     const isNumber = numbersInput.checked;
     const isSymbol = symbolsInput.checked;
 
-    generatePassword(length, isNumber, isUpper, isSymbol, islower);
+  resultDiv.innerText =  generatePassword(length, isNumber, isUpper, isSymbol, islower);
 }
+
+
 
 generatePasswordBtn.addEventListener("click", getAllUserInput);
